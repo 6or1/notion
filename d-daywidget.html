@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>D-Day Widget - Compact</title>
+  <title>D-Day Widget Responsive</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -24,48 +24,54 @@
     #timer {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: 10px;
+      grid-gap: 16px;
     }
 
     .time-box {
-      width: 90px;
-      height: 90px;
+      width: 120px;
+      height: 120px;
       background: #DAD8FF;
-      border-radius: 14px;
+      border-radius: 16px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     }
 
     .number {
-      font-size: 1.8em;
-      color: #1B1F3A;
+      font-size: 2.5em;
       font-weight: 700;
-      line-height: 1.1;
+      color: #1B1F3A;
+      line-height: 1;
     }
 
     .label {
-      font-size: 0.7em;
-      color: #1B1F3A;
+      font-size: 0.85em;
       font-weight: 500;
-      letter-spacing: 0.5px;
-      margin-top: 2px;
+      color: #1B1F3A;
+      margin-top: 4px;
+      letter-spacing: 0.6px;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
+      #timer {
+        grid-gap: 10px;
+      }
+
       .time-box {
-        width: 70px;
-        height: 70px;
+        width: 38vw;
+        height: 38vw;
+        max-width: 120px;
+        max-height: 120px;
       }
 
       .number {
-        font-size: 1.4em;
+        font-size: 2em;
       }
 
       .label {
-        font-size: 0.65em;
+        font-size: 0.75em;
       }
     }
   </style>
