@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>D-Day Countdown</title>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900" rel="stylesheet" />
+  <title>D-Day Widget - Square</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Lato', sans-serif;
-      background-color: white;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: white;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -17,37 +22,48 @@
     }
 
     #timer {
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 12px;
     }
 
     .time-box {
-      display: inline-block;
-      margin: 10px;
-      padding: 20px;
-      width: 80px;
-      border-radius: 10px;
-      background: #CCCCFF;
-      color: #183059;
+      width: 100px;
+      height: 100px;
+      background: #f1f1f1;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    .numbers {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3em;
-      margin-bottom: 5px;
+    .number {
+      font-size: 2em;
       color: #183059;
+      line-height: 1;
     }
 
-    @media (max-width: 600px) {
+    .label {
+      font-size: 0.75em;
+      color: #183059;
+      margin-top: 5px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 500px) {
       .time-box {
-        width: 60px;
-        padding: 15px;
-        margin: 5px;
+        width: 80px;
+        height: 80px;
       }
 
-      .numbers {
-        font-size: 2em;
+      .number {
+        font-size: 1.6em;
+      }
+
+      .label {
+        font-size: 0.7em;
       }
     }
   </style>
@@ -56,20 +72,20 @@
 
   <div id="timer">
     <div class="time-box">
-      <div id="days" class="numbers">0</div>
-      days
+      <div id="days" class="number">0</div>
+      <div class="label">DAYS</div>
     </div>
     <div class="time-box">
-      <div id="hours" class="numbers">0</div>
-      hours
+      <div id="hours" class="number">0</div>
+      <div class="label">HOURS</div>
     </div>
     <div class="time-box">
-      <div id="minutes" class="numbers">0</div>
-      minutes
+      <div id="minutes" class="number">0</div>
+      <div class="label">MINUTES</div>
     </div>
     <div class="time-box">
-      <div id="seconds" class="numbers">0</div>
-      seconds
+      <div id="seconds" class="number">0</div>
+      <div class="label">SECONDS</div>
     </div>
   </div>
 
@@ -82,7 +98,7 @@
 
       if (distance < 0) {
         clearInterval(timer);
-        document.getElementById("timer").innerHTML = "<h2>🎉 Happy New Year 2026!</h2>";
+        document.getElementById("timer").innerHTML = "<h4>🎉 2026!</h4>";
         return;
       }
 
