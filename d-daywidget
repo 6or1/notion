@@ -28,25 +28,25 @@ body{
 }
 
 .days {
-  background: #EF2F3C;
+  background: #CCCCFF;
 }
 
 .hours {
-  background: #eeeeee;
+  background: #CCCCFF;
   color: #183059;
 }
 
 .minutes {
-  background: #276FBF;
+  background: #CCCCFF;
 }
 
 .seconds {
-  background: #F0A202;
+  background: #CCCCFF;
 }
 
 .numbers {
   font-family: 'Montserrat', sans-serif;
-  color:  #183059;
+  color:  #FFFFFF;
   font-size: 4em;
   text-align: center;
 }
