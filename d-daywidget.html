@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>D-Day Widget - Square</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" />
+  <title>D-Day Widget - Compact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -13,7 +13,7 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: white;
       display: flex;
       justify-content: center;
@@ -24,46 +24,48 @@
     #timer {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: 12px;
+      grid-gap: 10px;
     }
 
     .time-box {
-      width: 100px;
-      height: 100px;
-      background: #f1f1f1;
-      border-radius: 12px;
+      width: 90px;
+      height: 90px;
+      background: #DAD8FF;
+      border-radius: 14px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
 
     .number {
-      font-size: 2em;
-      color: #183059;
-      line-height: 1;
+      font-size: 1.8em;
+      color: #1B1F3A;
+      font-weight: 700;
+      line-height: 1.1;
     }
 
     .label {
-      font-size: 0.75em;
-      color: #183059;
-      margin-top: 5px;
-      letter-spacing: 1px;
+      font-size: 0.7em;
+      color: #1B1F3A;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
     }
 
     @media (max-width: 500px) {
       .time-box {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
       }
 
       .number {
-        font-size: 1.6em;
+        font-size: 1.4em;
       }
 
       .label {
-        font-size: 0.7em;
+        font-size: 0.65em;
       }
     }
   </style>
