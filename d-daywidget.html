@@ -3,33 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>D-Day Widget Responsive</title>
+  <title>D-Day Widget Expand Fix</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
       background: white;
+      font-family: 'Poppins', sans-serif;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #wrapper {
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      padding: 20px 0;
     }
 
     #timer {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: 16px;
+      gap: 16px;
     }
 
     .time-box {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       background: #DAD8FF;
       border-radius: 16px;
       display: flex;
@@ -40,7 +47,7 @@
     }
 
     .number {
-      font-size: 2.5em;
+      font-size: 2.6em;
       font-weight: 700;
       color: #1B1F3A;
       line-height: 1;
@@ -50,52 +57,61 @@
       font-size: 0.85em;
       font-weight: 500;
       color: #1B1F3A;
-      margin-top: 4px;
+      margin-top: 5px;
       letter-spacing: 0.6px;
     }
 
-    @media (max-width: 600px) {
-      #timer {
-        grid-gap: 10px;
-      }
+    /* Force Notion to recognize height */
+    .spacer {
+      height: 300px;  /* ⬅️ 여기가 핵심 */
+      opacity: 0;
+    }
 
+    @media (max-width: 600px) {
       .time-box {
-        width: 38vw;
-        height: 38vw;
-        max-width: 120px;
-        max-height: 120px;
+        width: 35vw;
+        height: 35vw;
+        max-width: 130px;
+        max-height: 130px;
       }
 
       .number {
-        font-size: 2em;
+        font-size: 2.2em;
       }
 
       .label {
         font-size: 0.75em;
       }
+
+      .spacer {
+        height: 200px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <div id="timer">
-    <div class="time-box">
-      <div id="days" class="number">0</div>
-      <div class="label">DAYS</div>
-    </div>
-    <div class="time-box">
-      <div id="hours" class="number">0</div>
-      <div class="label">HOURS</div>
-    </div>
-    <div class="time-box">
-      <div id="minutes" class="number">0</div>
-      <div class="label">MINUTES</div>
-    </div>
-    <div class="time-box">
-      <div id="seconds" class="number">0</div>
-      <div class="label">SECONDS</div>
+  <div id="wrapper">
+    <div id="timer">
+      <div class="time-box">
+        <div id="days" class="number">0</div>
+        <div class="label">DAYS</div>
+      </div>
+      <div class="time-box">
+        <div id="hours" class="number">0</div>
+        <div class="label">HOURS</div>
+      </div>
+      <div class="time-box">
+        <div id="minutes" class="number">0</div>
+        <div class="label">MINUTES</div>
+      </div>
+      <div class="time-box">
+        <div id="seconds" class="number">0</div>
+        <div class="label">SECONDS</div>
+      </div>
     </div>
   </div>
+
+  <div class="spacer"></div> <!-- ✅ Notion에서 iframe 높이 강제 확보용 -->
 
   <script>
     const countdownDate = new Date("Jan 1, 2026 00:00:00").getTime();
